@@ -58,3 +58,11 @@ Feel free to make any changes to the `UpdateQuality` method and add any new code
 1. Write comprehensive testing for current functionality. Ensure all tests pass. Aim for 100% coverage.
 2. Refactor. The legacy code is not very DRY and has large complex if statements that code be shortened/simplified. Extract classes where appropriate (different types of item)
 3. Add "Conjured" class via TDD. 
+
+Classes:
+Item  
+- Regular item
+- Aged brie
+- Sulfuras
+- Backstage pass
+- Conjured
