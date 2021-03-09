@@ -1,4 +1,5 @@
-const {Shop, Item} = require("../src/gilded_rose");
+const {Shop} = require("../src/shop");
+const {Item} = require("../src/item");
 
 describe("Gilded Rose", function() {
   it("should foo", function() {
@@ -7,3 +8,4 @@ describe("Gilded Rose", function() {
     expect(items[0].name).toBe("foo");
   });
 });
+
