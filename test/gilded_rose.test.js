@@ -1,8 +1,9 @@
-const {Shop} = require("../src/shop");
-const {RegularItem} = require("../src/regular_item");
-const {AgedBrie} = require("../src/aged_brie");
-const {Sulfuras} = require("../src/sulfuras");
-const {BackstagePass} = require("../src/backstage_pass");
+const { Shop, 
+        RegularItem, 
+        AgedBrie, 
+        Sulfuras, 
+        BackstagePass
+      } = require("../src/shop");
 
 describe("Gilded Rose", function() {
   const gildedRose = new Shop([new RegularItem("Thing", 10, 10),
@@ -12,10 +13,10 @@ describe("Gilded Rose", function() {
   new BackstagePass("Gig1", 11, 10),
   new BackstagePass("Gig2", 10, 10),
   new BackstagePass("Gig3", 5, 10),
-  new BackstagePass("Gig4", -1, 10),]
-  );
+  new BackstagePass("Gig4", -1, 10)
+]);
 
-  const items = gildedRose.updateQuality();
+  const items = gildedRose.updateItemQuality();
 
   it("RegularItem quality decreases by one", function() {
     expect(items[0].quality).toEqual(9);

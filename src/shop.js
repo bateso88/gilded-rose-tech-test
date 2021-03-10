@@ -1,8 +1,13 @@
+const {RegularItem} = require("../src/regular_item");
+const {AgedBrie} = require("../src/aged_brie");
+const {Sulfuras} = require("../src/sulfuras");
+const {BackstagePass} = require("../src/backstage_pass");
+
 class Shop {
   constructor(items=[]){
     this.items = items;
   }
-  updateQuality() {
+  updateItemQuality() {
     for (let i = 0; i < this.items.length; i++) {
      this.items[i].updateQuality()
     }
@@ -11,5 +16,5 @@ class Shop {
 }
 
 module.exports = {
-  Shop
+  Shop, RegularItem, AgedBrie, Sulfuras, BackstagePass
 }
