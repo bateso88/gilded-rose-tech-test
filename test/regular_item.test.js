@@ -1,14 +1,14 @@
 const {RegularItem} = require("../src/regular_item");
 
 describe("RegularItem", function() {
-  it("quality should decrease by one in normal circumstances", function() {
+  it("quality should decrease by one in 'normal' circumstances", function() {
     const item = new RegularItem("thing1", 25, 30);
     item.updateQuality()
     expect(item.quality).toEqual(29)
     expect(item.sellIn).toEqual(24)
   });
   it("quality should decrease by two after sellIn", function() {
-    const item = new RegularItem("thing2", 0, 30);
+    const item = new RegularItem("thing2", -1, 30);
     item.updateQuality()
     expect(item.quality).toEqual(28)
   });
