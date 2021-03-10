@@ -8,7 +8,7 @@ class BackstagePass extends Item {
     this.sellIn--
     this.quality++
     this._increaseQualityIfTierTwoOrThree()
-    this._amendQuality()
+    this._setQualityToMaxOrZeroIfNecessary()
   } 
   _increaseQualityIfTierTwoOrThree() {
     if(this.sellIn <= TIER_TWO_UPPER_LIMIT) {
@@ -21,7 +21,7 @@ class BackstagePass extends Item {
       this.quality++         
     }
   }
-  _amendQuality() {
+  _setQualityToMaxOrZeroIfNecessary() {
     this._setQualityToMaxIfNecessary()
     this._setQualityToZeroIfSellInHasPassed()
   }
