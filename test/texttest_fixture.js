@@ -14,10 +14,10 @@ const items = [
   new Sulfuras("Sulfuras, Hand of Ragnaros", 0, 80),
   new Sulfuras("Sulfuras, Hand of Ragnaros", -1, 80),
   new BackstagePass("Backstage passes to a TAFKAL80ETC concert", 15, 20),
-  new BackstagePass("Backstage passes to a TAFKAL80ETC concert", 10, 49),
-  new BackstagePass("Backstage passes to a TAFKAL80ETC concert", 5, 49),
+  new BackstagePass("Backstage passes to a TAFKAL80ETC concert", 10, 45),
+  new BackstagePass("Backstage passes to a TAFKAL80ETC concert", 5, 40),
   new ConjuredItem("Conjured Mana Cake", 3, 6),
-  new ConjuredItem("Conjured Mana Cake", 5, 45),
+  new ConjuredItem("Conjured Mana Cake", 1, 45),
 ];
 
 const days = Number(process.argv[2]) || 2;

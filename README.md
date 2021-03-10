@@ -85,3 +85,46 @@ Item
 - Sulfuras
 - Backstage pass
 - Conjured
+
+# Approach
+
+##### My approach to designing this solution was as follows:  
+1. Planning 
+  - I made myself familiar with the legacy code to understand what functionlity was already in place
+  - I did the above planning to calculate in advance what sort of classes I would need to extract.
+2. TDD and OOP 
+  - I started by writing feature tests for how I wished to proceed with class extraction. I let the feature tests then inform my unit tests for each class I made. I worked my way through each class using TDD in this way; passing all tests and refactoring.
+  - I used OOP to refactor the code to be much clearer and more legible
+  - Once all legacy code was passing all tests and test coverage was 100%, I moved on to TDD the solution for conjured items.
+
+# Structure 
+##### I structured my code as follows:
+As per my planning, I added five classes:   
+1. RegularItem
+2. AgedBrie
+3. Sulfuras
+4. BackstagePass
+5. ConjuredItem 
+
+Each of these classes inherited their attributes from the pre-existing Item class. I created these classes in order to follow the SRP. Each type of item's quality updated in a different way. Therefore it made sense to create many different classes, each with a method named "updateQuality", as opposed to having a long and complex 'if' statement in the Shop class.  
+I removed all conditionals from the Shop class and replaced it with a method named "updateItemQuality". This iterates over the 'items' array and calls 'updateQuality' on each item.
+
+# Dependencies 
+ - jest
+  - for testing and test coverage  
+ - eslint 
+  - to linter
+
+# Solution 
+
+The following screenshot demonstrates the deprecation/improvement of each type of item over 4 days.  
+It is run by the command: 
+
+```sh
+node test/texttest_fixture.js 4
+```
+
+![Example](example_test.png)
+
+
+  
