@@ -30,6 +30,19 @@ To generate test coverage report
 npm run test:coverage
 ```
 
+To run text test
+
+```sh
+node test/texttest_fixture.js
+```
+(default is two days)  
+
+To run text test for custom number of days (e.g. 25)
+
+```sh
+node test/texttest_fixture.js 25
+```
+
 # Challenge Guidelines
 
 This is a well known kata developed by [Terry Hughes](http://iamnotmyself.com/2011/02/13/refactor-this-the-gilded-rose-kata/). This is commonly used as a tech test to assess a candidate's ability to read, refactor and extend legacy code.
