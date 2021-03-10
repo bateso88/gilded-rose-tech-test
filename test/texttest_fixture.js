@@ -3,7 +3,8 @@ const {
   RegularItem, 
   AgedBrie, 
   Sulfuras, 
-  BackstagePass
+  BackstagePass,
+  ConjuredItem
 } = require("../src/shop");
 
 const items = [
@@ -15,9 +16,8 @@ const items = [
   new BackstagePass("Backstage passes to a TAFKAL80ETC concert", 15, 20),
   new BackstagePass("Backstage passes to a TAFKAL80ETC concert", 10, 49),
   new BackstagePass("Backstage passes to a TAFKAL80ETC concert", 5, 49),
-
-  // This Conjured item does not work properly yet
-  new RegularItem("Conjured Mana Cake", 3, 6),
+  new ConjuredItem("Conjured Mana Cake", 3, 6),
+  new ConjuredItem("Conjured Mana Cake", 5, 45),
 ];
 
 const days = Number(process.argv[2]) || 2;

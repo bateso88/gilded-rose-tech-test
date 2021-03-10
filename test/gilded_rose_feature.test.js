@@ -16,7 +16,8 @@ describe("Gilded Rose", function() {
     new BackstagePass("Gig2", 11, 10),
     new BackstagePass("Gig3", 6, 10),
     new BackstagePass("Gig4", -1, 10),
-    new ConjuredItem("Conjured thing", 10, 10)
+    new ConjuredItem("Conjured thing", 10, 10),
+    new ConjuredItem("Conjured thing", 0, 10)
   ]);
 
   const items = gildedRose.updateItemQuality();
@@ -47,5 +48,8 @@ describe("Gilded Rose", function() {
   });
   it("Conjured quality decreses by two", function() {
     expect(items[8].quality).toEqual(8);
+  });
+  it("Conjured quality decreses by four after sellIn", function() {
+    expect(items[9].quality).toEqual(6);
   });
 });
