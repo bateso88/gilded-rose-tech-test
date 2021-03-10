@@ -3,9 +3,12 @@ const MAX_QUALITY = 50;
 
 class AgedBrie extends Item {
   updateQuality() {
-    this.sellIn--;              // reduce sellIn
+    this.sellIn--;
+    this._increaseQualityIfLessThanMax()
+  }
+  _increaseQualityIfLessThanMax() {
     if(this.quality < MAX_QUALITY) {
-      this.quality++            //increase by 1 if under 50
+      this.quality++ 
     } 
   }
 }

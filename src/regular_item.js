@@ -2,15 +2,20 @@ const {Item} = require("../src/item");
 
 class RegularItem extends Item {
   updateQuality() {
-    this.sellIn--;              // reduce sellIn
-    if(this.sellIn < 0) {
-      this.quality -= 2         //reduce by 2 if past sell by date
-    } else {
-      this.quality--            //reduce by 1 if not past sell by date
-    }
+    this.sellIn--;
+    this.quality--;
+    this._reduceQualityIfSellInHasPassed()
+    this._setQualityToZeroIfNecessary()
+  }
+  _setQualityToZeroIfNecessary() {
     if(this.quality < 0) {
-      this.quality = 0          //set quality to zero if necessary
+      this.quality = 0
     }
+  }
+  _reduceQualityIfSellInHasPassed() {
+    if(this.sellIn < 0) {
+      this.quality--
+    } 
   }
 }
 
