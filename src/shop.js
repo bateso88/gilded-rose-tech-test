@@ -2,6 +2,7 @@ const {RegularItem} = require("../src/regular_item");
 const {AgedBrie} = require("../src/aged_brie");
 const {Sulfuras} = require("../src/sulfuras");
 const {BackstagePass} = require("../src/backstage_pass");
+const {ConjuredItem} = require("../src/conjured_item");
 
 class Shop {
   constructor(items=[]){
@@ -16,5 +17,5 @@ class Shop {
 }
 
 module.exports = {
-  Shop, RegularItem, AgedBrie, Sulfuras, BackstagePass
+  Shop, RegularItem, AgedBrie, Sulfuras, BackstagePass, ConjuredItem
 }

@@ -2,7 +2,8 @@ const { Shop,
         RegularItem, 
         AgedBrie, 
         Sulfuras, 
-        BackstagePass
+        BackstagePass, 
+        ConjuredItem
       } = require("../src/shop");
 
 describe("Gilded Rose", function() {
@@ -14,7 +15,8 @@ describe("Gilded Rose", function() {
     new BackstagePass("Gig1", 12, 10),
     new BackstagePass("Gig2", 11, 10),
     new BackstagePass("Gig3", 6, 10),
-    new BackstagePass("Gig4", -1, 10)
+    new BackstagePass("Gig4", -1, 10),
+    new ConjuredItem("Conjured thing", 10, 10)
   ]);
 
   const items = gildedRose.updateItemQuality();
@@ -22,7 +24,7 @@ describe("Gilded Rose", function() {
   it("RegularItem quality decreases by one", function() {
     expect(items[0].quality).toEqual(9);
   });
-  it("RegularItem quality decreases twice after sellIn", function() {
+  it("RegularItem quality decreases by two after sellIn", function() {
     expect(items[1].quality).toEqual(8);
   });
   it("AgedBrie improves", function() {
@@ -42,5 +44,8 @@ describe("Gilded Rose", function() {
   });
   it("BackstagePass quality is 0 sellIn <0", function() {
     expect(items[7].quality).toEqual(0);
+  });
+  it("Conjured quality decreses by two", function() {
+    expect(items[8].quality).toEqual(8);
   });
 });
