@@ -6,15 +6,16 @@ const { Shop,
       } = require("../src/shop");
 
 describe("Gilded Rose", function() {
-  const gildedRose = new Shop([new RegularItem("Thing", 10, 10),
-  new RegularItem("Thing2", -1, 10),
-  new AgedBrie("Brie", 10, 10),
-  new Sulfuras("Sulfuras", 10, 10),
-  new BackstagePass("Gig1", 11, 10),
-  new BackstagePass("Gig2", 10, 10),
-  new BackstagePass("Gig3", 5, 10),
-  new BackstagePass("Gig4", -1, 10)
-]);
+  const gildedRose = new Shop([
+    new RegularItem("Thing", 10, 10),
+    new RegularItem("Thing2", -1, 10),
+    new AgedBrie("Brie", 10, 10),
+    new Sulfuras("Sulfuras", 10, 10),
+    new BackstagePass("Gig1", 12, 10),
+    new BackstagePass("Gig2", 11, 10),
+    new BackstagePass("Gig3", 6, 10),
+    new BackstagePass("Gig4", -1, 10)
+  ]);
 
   const items = gildedRose.updateItemQuality();
 
