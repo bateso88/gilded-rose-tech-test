@@ -110,9 +110,9 @@ Each of these classes inherited their attributes from the pre-existing Item clas
 I removed all conditionals from the Shop class and replaced it with a method named "updateItemQuality". This iterates over the 'items' array and calls 'updateQuality' on each item.
 
 # Dependencies 
- - jest
+- jest 
   - for testing and test coverage  
- - eslint 
+- eslint 
   - to linter
 
 # Solution 
