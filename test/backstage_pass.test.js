@@ -1,29 +1,34 @@
-const {BackstagePass} = require("../src/backstage_pass");
+const {BackstagePass, MAX_QUALITY, 
+  TIER_TWO_UPPER_LIMIT, 
+  TIER_THREE_UPPER_LIMIT} = require("../src/backstage_pass");
 
 describe("BackstagePass", function() {
-  it("quality increases by 1 when the concert is in over 10 days", function() {
-    const item = new BackstagePass("backstage pass 1", 12, 30);
+  it(`quality increases by 1 when the concert is in over ${TIER_TWO_UPPER_LIMIT}
+   days`, function() {
+    const item = new BackstagePass("Bs pass 1", TIER_TWO_UPPER_LIMIT + 2, 30);
     item.updateQuality()
     expect(item.quality).toEqual(31)
     expect(item.sellIn).toEqual(11)
   });
-  it("quality increases by 2 when {5 < sellIn <= 10}", function() {
-    const item = new BackstagePass("backstage pass 2", 11, 30);
+  it(`quality increases by 2 when sellIn is ${TIER_TWO_UPPER_LIMIT} or less but 
+  greater than ${TIER_THREE_UPPER_LIMIT}`, function() {
+    const item = new BackstagePass("Bs pass 2", TIER_TWO_UPPER_LIMIT + 1, 30);
     item.updateQuality()
     expect(item.quality).toEqual(32)
   });
-  it("quality increases by 3 when sellIn is 5 or less", function() {
-    const item = new BackstagePass("backstage pass 3", 6, 30);
+  it(`quality increases by 3 when sellIn is ${TIER_THREE_UPPER_LIMIT} or less`,
+   function() {
+    const item = new BackstagePass("Bs pass 3", TIER_THREE_UPPER_LIMIT + 1, 30);
     item.updateQuality()
     expect(item.quality).toEqual(33)
   });
-  it("quality cannot exceed 50", function() {
-    const item = new BackstagePass("backstage pass 4", 5, 50);
+  it(`quality cannot exceed ${MAX_QUALITY}`, function() {
+    const item = new BackstagePass("Bs pass 4", 5, MAX_QUALITY);
     item.updateQuality()
-    expect(item.quality).toEqual(50)
+    expect(item.quality).toEqual(MAX_QUALITY)
   });
   it("quality becomes zero after sellIn", function() {
-    const item = new BackstagePass("backstage pass 5", -1, 50);
+    const item = new BackstagePass("Bs pass 5", -1, 50);
     item.updateQuality()
     expect(item.quality).toEqual(0)
   });

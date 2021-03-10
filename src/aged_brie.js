@@ -14,5 +14,5 @@ class AgedBrie extends Item {
 }
 
 module.exports = {
-  AgedBrie
+  AgedBrie, MAX_QUALITY
 }

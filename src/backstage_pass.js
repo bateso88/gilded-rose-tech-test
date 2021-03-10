@@ -39,5 +39,5 @@ class BackstagePass extends Item {
 }
 
 module.exports = {
-  BackstagePass
+  BackstagePass, MAX_QUALITY, TIER_TWO_UPPER_LIMIT, TIER_THREE_UPPER_LIMIT
 }
